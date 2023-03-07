@@ -19,7 +19,7 @@ const TabBarCustomButton = ({ addButton, children, onPress }) => {
                 <View style={{ flexDirection: 'row', position: 'absolute', top: 0 }}>
                     <View style={{ flex: 1, backgroundColor: COLORS_Light.background }}></View>
                     <Svg
-                        width={70}
+                        width={75}
                         height={61}
                         viewBox="0 0 75 61"
                     >
@@ -55,7 +55,6 @@ const TabBarCustomButton = ({ addButton, children, onPress }) => {
                 style={{
                     flex: 1,
                     backgroundColor: COLORS_Light.background,
-                    elevation: 3
                 }}
                 activeOpacity={1}
                 onPress={onPress}
@@ -70,7 +69,6 @@ const TabBarCustomButton = ({ addButton, children, onPress }) => {
 const Tabs = () => {
     return (
         <Tab.Navigator
-            
             screenOptions={({ route }) => ({
                 tabBarStyle: {
                     // padding: 5,
@@ -121,7 +119,7 @@ const Tabs = () => {
                             style={{
                                 width: 25,
                                 height: 25,
-                                tintColor: focused ? COLORS_Light.background_constrast : COLORS_Light.lightBlue
+                                tintColor: focused ? COLORS_Light.background_constrast : COLORS_Light.lightBlue,
                             }}
                         />
                     ),
