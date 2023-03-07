@@ -1,33 +1,35 @@
-export const arrow_up = require("../assets/icons/arrow_up.svg")
-export const conditioner = require("../assets/icons/conditioner.svg")
-export const document = require("../assets/icons/document.svg")
-export const favourite = require("../assets/icons/favourite.svg")
-export const home = require("../assets/icons/home.svg")
+export const arrow_up_focused = require("../assets/icons/arrow_up_focused.png")
+export const conditioner= require("../assets/icons/conditioner.png")
+export const document_focused = require("../assets/icons/document_focused.png")
+export const favourite = require("../assets/icons/favourite.png")
+export const home_focused = require("../assets/icons/home_focused.png")
 export const house_icon = require("../assets/icons/house_icon.png")
-export const lamp = require("../assets/icons/lamp.svg")
-export const light_dark = require("../assets/icons/light_dark.svg")
-export const more = require("../assets/icons/more.svg")
-export const notification = require("../assets/icons/notification.svg")
-export const plus = require("../assets/icons/plus.svg")
-export const setting = require("../assets/icons/setting.svg")
-export const temp = require("../assets/icons/temp.svg")
-export const time = require("../assets/icons/time.svg")
-export const water = require("../assets/icons/water.svg")
+export const lamp = require("../assets/icons/lamp.png")
+export const light_dark = require("../assets/icons/light_dark.png")
+export const more_focused = require("../assets/icons/more_focused.png")
+export const not_favourite = require("../assets/icons/not_favourite.png")
+export const notification_focused = require("../assets/icons/notification_focused.png")
+export const plus_focused = require("../assets/icons/plus_focused.png")
+export const schedule_focused = require("../assets/icons/schedule_focused.png")
+export const setting_focused = require("../assets/icons/setting_focused.png")
+export const temp = require("../assets/icons/temp.png")
+export const water = require("../assets/icons/water.png")
 
 export default {
-    arrow_up,
+    arrow_up_focused,
     conditioner,
-    document,
+    document_focused,
     favourite,
-    home,
+    home_focused,
     house_icon,
     lamp,
     light_dark,
-    more,
-    notification,
-    plus,
-    setting,
+    more_focused,
+    not_favourite,
+    notification_focused,
+    plus_focused,
+    schedule_focused,
+    setting_focused,
     temp,
-    time,
     water,
 }
