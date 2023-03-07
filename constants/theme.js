@@ -45,6 +45,7 @@ export const SIZES = {
     body3: 16,
     body4: 14,
     body5: 12,
+    label: 12,
 
     // app dimensions
     width,
@@ -62,6 +63,7 @@ export const FONTS = {
     body3: { fontFamily: "Roboto-regular", fontSize: SIZES.body3, lineHeight: 22 },
     body4: { fontFamily: "Roboto-regular", fontSize: SIZES.body4, lineHeight: 22 },
     body5: { fontFamily: "Roboto-regular", fontSize: SIZES.body5, lineHeight: 22 },
+    label: { fontFamily: "Roboto-Black", fontWeight: 800, fontSize: SIZES.label, lineHeight: 22 },
 }
 
 const appTheme  = { COLORS_Light, SIZES, FONTS };
