@@ -3,7 +3,7 @@ import { View, Image, TouchableOpacity } from 'react-native';
 import { createBottomTabNavigator, BottomTabBar } from "@react-navigation/bottom-tabs";
 import Svg, {Path} from 'react-native-svg';
 
-import { Home } from "../../screens";
+import { Home} from "../../screens";
 
 import { COLORS_Light, FONTS, icons } from "../../constants";
 

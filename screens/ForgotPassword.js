@@ -5,21 +5,17 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import appTheme from "../constants/theme";
 import { login_vector1, login_vector2 } from "../constants/images";
 
-const Login = () => {
+const Home = () => {
     const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+    const [confirmNewPassword, setConfirmNewPassword] = useState('');
 
-    const handleLogin = () => {
-        //navigate to home screen
-    }
-
-    const forgotPassword = () => {
-        //navigate to forgot password screen
+    const handleChangePassword = () => {
+        //navigate to login screen
     }
     return (
         <View style={styles.container}>
-            <Text style={styles.logo}>Hello</Text>
-                <Text style={styles.normalText}>Sign in to your account</Text>
+            <Text style={styles.logo}>Change your password</Text>
             <View style={styles.inputView}>
                 <TextInput
                     style={styles.inputText}
@@ -31,19 +27,24 @@ const Login = () => {
             <View style={styles.inputView}>
                 <TextInput
                     style={styles.inputText}
-                    placeholder="Password"
+                    placeholder="New password"
                     placeholderTextColor="#003f5c"
                     secureTextEntry={true}
-                    onChangeText={text => setPassword(text)}
+                    onChangeText={text => setNewPassword(text)}
+                />
+            </View>
+            <View style={styles.inputView}>
+                <TextInput
+                    style={styles.inputText}
+                    placeholder="Confirm new password"
+                    placeholderTextColor="#003f5c"
+                    secureTextEntry={true}
+                    onChangeText={text => setConfirmNewPassword(text)}
                 />
             </View>
 
-            <TouchableOpacity onpress={forgotPassword}>
-                <Text stile={styles.normalText}>Forgot your password?</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.loginBtn} onPress={handleLogin}>
-                <Text style={styles.loginText}>LOGIN</Text>
+            <TouchableOpacity style={styles.loginBtn} onPress={handleChangePassword}>
+                <Text style={styles.loginText}>Change password</Text>
             </TouchableOpacity>
         </View>
     );
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
       },
       logo: {
         fontWeight: 'bold',
-        fontSize: 50,
+        fontSize: appTheme.SIZES.h1,
         marginBottom: 20,
       },
       normalText: {
@@ -95,4 +96,4 @@ const styles = StyleSheet.create({
       },
 });
 
-export default Login;
+export default Home;
