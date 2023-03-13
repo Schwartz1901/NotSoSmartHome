@@ -1,7 +1,8 @@
 import React from "react";
 import { View, Image, TouchableOpacity } from 'react-native';
 import { createBottomTabNavigator, BottomTabBar } from "@react-navigation/bottom-tabs";
-import Svg, {Path} from 'react-native-svg';
+import Svg, { Path } from 'react-native-svg';
+import { isIphoneX } from "react-native-iphone-x-helper";
 
 import { Home } from "../../screens";
 
@@ -12,6 +13,18 @@ const Tab = createBottomTabNavigator();
 const TabBarCustomButton = ({ addButton, children, onPress }) => {
 
     var isSelected = addButton
+    if (isIphoneX()) {
+        eleStyle = {
+            flex: 1,
+            height: 60,
+            backgroundColor: COLORS_Light.background,
+        }
+    } else {
+        eleStyle = {
+            flex: 1,
+            backgroundColor: COLORS_Light.background,
+        }
+    }
 
     if (isSelected) {
         return (
@@ -52,10 +65,7 @@ const TabBarCustomButton = ({ addButton, children, onPress }) => {
     } else {
         return (
             <TouchableOpacity
-                style={{
-                    flex: 1,
-                    backgroundColor: COLORS_Light.background,
-                }}
+                style={eleStyle}
                 activeOpacity={1}
                 onPress={onPress}
             >
@@ -65,14 +75,35 @@ const TabBarCustomButton = ({ addButton, children, onPress }) => {
     }
 }
 
+const CustomTabBarIphone = (props) => {
+    if (isIphoneX()) {
+        return (
+            <View>
+                <View
+                    style={{
+                        position: 'absolute',
+                        height: 30,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        backgroundColor: COLORS_Light.background
+                    }}
+                >
+                </View>
+                <BottomTabBar {...props.props} />
+            </View>
+        )
+    }
+    else return (
+        <BottomTabBar {...props.props} />
+    )
+}
 
 const Tabs = () => {
     return (
         <Tab.Navigator
             screenOptions={({ route }) => ({
                 tabBarStyle: {
-                    // padding: 5,
-                    height: 60,
                     borderTopWidth: 0,
                     backgroundColor: "transparent",
                     position: 'absolute',
@@ -82,16 +113,21 @@ const Tabs = () => {
                 tabBarInactiveTintColor: COLORS_Light.lightBlue,
                 tabBarLabelStyle: FONTS.label,
                 headerShown: false
-              })
+            })
             }
             initialRouteName={"Home"}
+            tabBar={(props) => (
+                <CustomTabBarIphone
+                    props={props}
+                />
+            )}
         >
-            <Tab.Screen 
+            <Tab.Screen
                 name="Home"
                 component={Home}
                 options={{
-                    tabBarIcon: ({focused}) => (
-                        <Image 
+                    tabBarIcon: ({ focused }) => (
+                        <Image
                             source={icons.home_focused}
                             resizeMode="contain"
                             style={{
@@ -108,12 +144,12 @@ const Tabs = () => {
                     )
                 }}
             />
-            <Tab.Screen 
+            <Tab.Screen
                 name="Schedule"
                 component={Home}
                 options={{
-                    tabBarIcon: ({focused}) => (
-                        <Image 
+                    tabBarIcon: ({ focused }) => (
+                        <Image
                             source={icons.schedule_focused}
                             resizeMode="contain"
                             style={{
@@ -130,13 +166,13 @@ const Tabs = () => {
                     )
                 }}
             />
-            <Tab.Screen 
+            <Tab.Screen
                 name="Add"
                 component={Home}
                 options={{
                     tabBarLabel: () => null,
-                    tabBarIcon: ({focused}) => (
-                        <Image 
+                    tabBarIcon: ({ focused }) => (
+                        <Image
                             source={icons.plus_focused}
                             resizeMode="contain"
                             style={{
@@ -154,12 +190,12 @@ const Tabs = () => {
                     )
                 }}
             />
-            <Tab.Screen 
+            <Tab.Screen
                 name="Scripts"
                 component={Home}
                 options={{
-                    tabBarIcon: ({focused}) => (
-                        <Image 
+                    tabBarIcon: ({ focused }) => (
+                        <Image
                             source={icons.document_focused}
                             resizeMode="contain"
                             style={{
@@ -176,12 +212,12 @@ const Tabs = () => {
                     )
                 }}
             />
-            <Tab.Screen 
+            <Tab.Screen
                 name="Settings"
                 component={Home}
                 options={{
-                    tabBarIcon: ({focused}) => (
-                        <Image 
+                    tabBarIcon: ({ focused }) => (
+                        <Image
                             source={icons.setting_focused}
                             resizeMode="contain"
                             style={{
