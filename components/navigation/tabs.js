@@ -4,7 +4,7 @@ import { createBottomTabNavigator, BottomTabBar } from "@react-navigation/bottom
 import Svg, {Path} from 'react-native-svg';
 
 import { Home} from "../../screens";
-
+import { HomeStackNavigator } from "./stacks";
 import { COLORS_Light, FONTS, icons } from "../../constants";
 
 const Tab = createBottomTabNavigator();
@@ -88,7 +88,7 @@ const Tabs = () => {
         >
             <Tab.Screen 
                 name="Home"
-                component={Home}
+                component={HomeStackNavigator}
                 options={{
                     tabBarIcon: ({focused}) => (
                         <Image 

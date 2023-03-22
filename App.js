@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import { Tabs } from "./components";
 import { Home, AirCondition, Light, Loading, Login } from "./screens";
+import { LoginStackNavigator } from "./components/navigation/stacks";
 
 const Stack = createStackNavigator();
 

@@ -5,16 +5,24 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import appTheme from "../constants/theme";
 import { login_vector1, login_vector2 } from "../constants/images";
 
-const Login = () => {
+const Login = ({navigation}) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const handleLogin = () => {
         //navigate to home screen
+        if (username == "hoangle123" && password == "hoangle123")
+            navigation.navigate("Home")
     }
 
     const forgotPassword = () => {
         //navigate to forgot password screen
+        navigation.navigate("ForgotPassword")
+    }
+
+    const register = () => {
+        //navigate to register screen
+        navigation.navigate("Register")
     }
     return (
         <View style={styles.container}>
@@ -46,7 +54,7 @@ const Login = () => {
                 <Text style={styles.loginText}>LOGIN</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={register}>
                 <Text style={styles.normalText}>Don't have an account? Create</Text>
             </TouchableOpacity>
         </View>
